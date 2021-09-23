@@ -1,18 +1,16 @@
-let gridDim = 16;
+const grid = document.getElementById("grid");
 
-const container = document.getElementById("container");
-
-function makeGrid(rows, cols) {
-	for (let i=0; i<(rows*cols); i++) {
-		let cell = document.createElement("div");
-		container.appendChild(cell).classList.add("grid");
+function makeGrid(gridSize) {
+	for (let i=0; i<(gridSize**2); i++) {
+		let unit = document.createElement("div");
+		grid.appendChild(unit).classList.add("grid");
 	}
 };
 
-makeGrid(gridDim, gridDim);
+makeGrid(16);
 
 
-let grid = document.getElementsByClassName("grid");
-for (i=0;i<grid.length;i++) {
-  grid[i].addEventListener("mouseover", e => e.target.classList.add("color-in"))
+let cell = document.getElementsByClassName("cell");
+for (i=0;i<cell.length;i++) {
+  cell[i].addEventListener("mouseover", e => e.target.classList.add("color-in"))
 };

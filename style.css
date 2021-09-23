@@ -1,12 +1,41 @@
+html, body {
+  height: 100%;
+}
 
+body {
+  background-color: gray;
+}
 
-.frame {
-  display: inline-block;*/
-  text-align: center;
-  height: 480px;
-  width: 800px;
+.page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons {
+  width: 90px;
+  height: 20px;
+  border-radius: 25px;
+}
+
+.main-screen {
+  min-width: 1210px;
+}
+
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   background-color: red;
-  position: relative;
 }
 
 h1 {
@@ -16,24 +45,46 @@ h1 {
 }
 
 #container {
+  display: flex;
+  flex: 5;
+  min-width: 800px;
+  max-width: 1050px;
+  grid-template-rows: repeat(16, 1fr);
+  grid-template-columns: repeat(16, 1fr);
+}
+
+.side {
+  background-color: red;
+  min-width: 80px;
+}
+
+#grid {
   display: grid;
   grid-template-rows: repeat(16, 1fr);
   grid-template-columns: repeat(16, 1fr);
-  margin: 20px 80px 0px 80px;
   justify-content: center;
   align-content: center;
   background-color: #DCDCDC;
-  height: 320px;
-  width: 640px;
+  min-height: 600px;
+  min-width: 100%;
 }
 
 .grid {
-  padding: 10px 20px;
-	text-align: center;
+  padding: 1px;
+  background-color: #DCDCDC;
+  flex: 1;
+  border: 1px black solid;
+  
 }
 
 .color-in {
   background-color: gray;
+}
+
+.bottom {
+  background-color: red;
+  position: relative;
+  min-height: 80px;
 }
 
 .dot1 {
@@ -55,3 +106,4 @@ h1 {
   position: absolute;
   right: 20px;
 }
+
