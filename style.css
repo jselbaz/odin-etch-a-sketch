@@ -3,7 +3,7 @@ html, body {
 }
 
 body {
-  background-color: gray;
+  background-color: black;
 }
 
 .page {
@@ -18,6 +18,7 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin: 40px;
 }
 
 .buttons {
@@ -36,6 +37,8 @@ body {
   justify-content: center;
   align-items: center;
   background-color: red;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
 }
 
 h1 {
@@ -70,21 +73,17 @@ h1 {
 }
 
 .grid {
-  padding: 1px;
   background-color: #DCDCDC;
   flex: 1;
-  border: 1px black solid;
   
-}
-
-.color-in {
-  background-color: gray;
 }
 
 .bottom {
   background-color: red;
   position: relative;
   min-height: 80px;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
 }
 
 .dot1 {
@@ -107,3 +106,6 @@ h1 {
   right: 20px;
 }
 
+.color-in {
+  background-color: gray;
+}
