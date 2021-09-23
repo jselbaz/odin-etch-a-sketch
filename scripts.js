@@ -1,15 +1,48 @@
-let currentSize = prompt("What size should the grid be? (1-100)");
+const grid = document.querySelector('.grid');
+let gridValue = document.querySelector('.grid-size');
+let gridSize = document.querySelector('input');
+const clearBtn = document.querySelector('.clearBtn');
+const adjustGridSize = document.querySelector('.apply');
+let size = 16;
+
+makeGrid(size);
+
+function makeCell(size) {
+  const div = document.createElement('div');
+  div.classList.add('cell');
+  div.style.width = `${size}px`;
+  div.style.height = `${size}px`;
+  return div;
+}
 
 function makeGrid(gridSize) {
-	for (let i=0; i<(gridSize**2); i++) {
-		let unit = document.createElement("div");
-		grid.appendChild(unit).classList.add("grid");
-	}
-};
+  for (let i=0; i<gridSize; i++) {
+    for (let j=0; j<gridSize; j++) {
+      grid.appendChild(makeCell(grid.clientWidth / gridSize));
+    }
+  }
+}
 
-makeGrid(currentSize);
+function changeSize() {
+  while (grid.firstChild) {
+    grid.removeChild(grid.lastChild);
+  }
+  makeGrid(size);
+}
 
-let cell = document.getElementsByClassName("grid");
-for (i=0;i<cell.length;i++) {
-  cell[i].addEventListener("mouseover", e => e.target.classList.add("color-in"))
-};
+grid.addEventListener('mouseover', function(e) {
+  if (e.target.matches('.cell')) {
+    e.target.classList.add('active');
+  }
+});
+
+gridSize.addEventListener('input', function(e) {
+  size = e.target.value;
+  gridValue.textContent = `${size}x${size}`;
+});
+
+adjustGridSize.addEventListener('click', function() {
+  changeSize();
+});
+
+adjustGridSize.addEventListener('click', changeSize);

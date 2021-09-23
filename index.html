@@ -14,14 +14,16 @@
 <body>
 <div class="page">
   <div class="controls">
-    <input class="buttons" id="colorPicker" type="color" value="#333333">
-    <button class="buttons" id="colorBtn">Color Mode</button>
-    <button class="buttons" id="rainbowBtn">Rainbow Mode</button>
-    <button class="buttons" id="darkenBtn">Darken Mode</button>
-    <button class="buttons" id="eraseBtn">Eraser</button>
-    <button class="buttons" id="clearBtn">Clear</button>
-    <div id="grid-size">16 x 16</div>
-    <input id="sizeSlider" type="range" min="1" max="100">
+    <!--<input class="buttons" id="colorPicker" type="color" value="#333333">-->
+    <button class="buttons colorBtn">Color Mode</button>
+    <button class="buttons rainbowBtn">Rainbow Mode</button>
+    <button class="buttons darkenBtn">Darken Mode</button>
+    <button class="buttons eraseBtn">Eraser</button>
+    <button class="buttons clearBtn">Clear</button>
+    <div class="grid-size">16 x 16</div>
+    <input type="range" min="1" max="30">
+    <button class="buttons apply">Apply</button>
+
   </div>
   <div class="main-screen">
   <div class="header">
@@ -29,7 +31,7 @@
     </div>
     <div id="container">
     <div class="side"></div>
-    <div id="grid"></div>
+    <div class="grid"></div>
     <div class="side"></div>
     </div>
     <div id="footer">

@@ -1,16 +1,11 @@
-html, body {
-  height: 100%;
-}
-
 body {
-  background-color: black;
+  background-color: white;
 }
 
 .page {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
 }
 
 .controls {
@@ -19,16 +14,25 @@ body {
   justify-content: center;
   align-items: center;
   margin: 40px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: #7FFFD4;
 }
 
 .buttons {
-  width: 90px;
+  font-size: 12px;
+  width: 100px;
   height: 20px;
-  border-radius: 25px;
+  border-radius: 5px;
+  margin: 1px;
 }
 
 .main-screen {
-  min-width: 1210px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 40px;
 }
 
 .header {
@@ -49,11 +53,6 @@ h1 {
 
 #container {
   display: flex;
-  flex: 5;
-  min-width: 800px;
-  max-width: 1050px;
-  grid-template-rows: repeat(16, 1fr);
-  grid-template-columns: repeat(16, 1fr);
 }
 
 .side {
@@ -61,21 +60,21 @@ h1 {
   min-width: 80px;
 }
 
-#grid {
-  display: grid;
-  grid-template-rows: repeat(16, 1fr);
-  grid-template-columns: repeat(16, 1fr);
-  justify-content: center;
-  align-content: center;
-  background-color: #DCDCDC;
-  min-height: 600px;
-  min-width: 100%;
+.grid {
+  width: 40rem;
+  height: 40rem;
+  position: relative;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-around;
 }
 
-.grid {
-  background-color: #DCDCDC;
-  flex: 1;
-  
+.cell {
+  background-color: #DCDCDC;  
+}
+
+.cell.active {
+  background-color: gray;
 }
 
 .bottom {
@@ -104,8 +103,4 @@ h1 {
   border-radius: 50%;
   position: absolute;
   right: 20px;
-}
-
-.color-in {
-  background-color: gray;
 }
